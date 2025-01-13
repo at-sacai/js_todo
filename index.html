@@ -3,10 +3,53 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<link rel="stylesheet" href="style.css" />
+		<title>Tasks</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		<script src="todo.js"></script>
+		<div class="container">
+			<header class="header">
+				<h1 class="title_header">Tasks</h1>
+			</header>
+			<section class="task_input">
+				<input type="text" autocomplete="off" placeholder="Enter your task" />
+				<button type="submit">Save</button>
+			</section>
+			<section class="task_all">
+				<h2>Current Tasks</h2>
+				<ul class="tasks"></ul>
+			</section>
+			<section class="task_results">
+				<h2>Tasks Result</h2>
+				<ul class="task_result_list">
+					<li class="task_item">
+						<p>All: <span class="all_count">0</span></p>
+					</li>
+					<li class="task_item">
+						<p>Complete: <span class="complete_count">0</span></p>
+					</li>
+					<li class="task_item">
+						<p>Ongoing: <span class="ongoing_count">0</span></p>
+					</li>
+				</ul>
+			</section>
+		</div>
+		<footer class="footer">
+			<p>&copy; 2024 Atsuhiro Blog. All rights reserved.</p>
+		</footer>
+		<template id="task_template">
+			<li class="task_item">
+				<div class="task_info">
+					<input type="checkbox" class="task_status" />
+					<span class="task_name"></span>
+				</div>
+				<div class="wrap_button">
+					<button class="edit">Edit</button>
+					<button class="delete">Delete</button>
+				</div>
+			</li>
+		</template>
+		<script src="script.js"></script>
 	</body>
 </html>
